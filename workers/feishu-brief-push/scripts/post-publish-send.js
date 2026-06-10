@@ -9,7 +9,7 @@ import { promisify } from "node:util";
 
 const execFileAsync = promisify(execFile);
 
-const DEFAULT_SITE_BASE_URL = "https://mondaylab.github.io/ai-industry-brief";
+const DEFAULT_SITE_BASE_URL = "https://skyscraperlee22-del.github.io/hud-brief";
 const DEFAULT_WORKER_URL = "https://ai-industry-brief-feishu-push.zelina-ceo-os.workers.dev";
 const DEFAULT_TIME_ZONE = "Asia/Shanghai";
 const DEFAULT_WAIT_ATTEMPTS = 18;
@@ -140,7 +140,7 @@ async function checkPublishedIssue({ detailUrl, archiveUrl, imageUrl, date }) {
     detail: {
       ok: detailResponse.ok,
       status: detailResponse.status,
-      hasCurrentDate: detailResponse.ok ? detailText.includes(dateLabel) && detailText.includes("星期一研究室出品") : null,
+      hasCurrentDate: detailResponse.ok ? detailText.includes(dateLabel) && detailText.includes("行业简报") : null,
     },
     image: {
       ok: imageResponse.ok,
@@ -176,7 +176,7 @@ async function checkPublishedPage({ detailUrl, archiveUrl, date }) {
     detail: {
       ok: detailResponse.ok,
       status: detailResponse.status,
-      hasCurrentDate: detailResponse.ok ? detailText.includes(dateLabel) && detailText.includes("星期一研究室出品") : null,
+      hasCurrentDate: detailResponse.ok ? detailText.includes(dateLabel) && detailText.includes("行业简报") : null,
     },
   };
 }

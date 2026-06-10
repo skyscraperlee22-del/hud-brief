@@ -11,19 +11,10 @@
 
 你也可以把它扩展成其他行业简报，比如出海印尼日报、跨境电商简报、外贸行业简报、制造业简报。
 
-
-更多好文欢迎关注公众号 **「星期一研究室」** 👇🏻
-
-交流群请加作者微信：`mondaylab712`，备注「报刊」。
-
-<img width="300" height="300" alt="7c71066c-b11d-4b84-99ee-6cea297de8ef" src="https://github.com/user-attachments/assets/90ffbb0c-d02f-4242-b60e-fd081f1bda3e" />
-
-
-
 ## 在线预览
 
-- 简报首页：[https://mondaylab.github.io/ai-industry-brief/](https://mondaylab.github.io/ai-industry-brief/)
-- 七天色板 Demo：[https://mondaylab.github.io/ai-industry-brief/color-palette-demo.html](https://mondaylab.github.io/ai-industry-brief/color-palette-demo.html)
+- 简报首页：[https://skyscraperlee22-del.github.io/hud-brief/](https://skyscraperlee22-del.github.io/hud-brief/)
+- 七天色板 Demo：[https://skyscraperlee22-del.github.io/hud-brief/color-palette-demo.html](https://skyscraperlee22-del.github.io/hud-brief/color-palette-demo.html)
 
 ## 这个 Skill 做了什么
 
@@ -78,19 +69,19 @@
 如果你使用 Codex 或支持 Skills 的 AI 编程助手，不需要手动复制文件。直接把下面这句话发给它即可。
 
 ```text
-请帮我安装 mondaylab/ai-industry-brief 这个行业简报 Skill，并根据提示帮我初始化一个行业简报项目。
+请帮我安装 skyscraperlee22-del/hud-brief 这个行业简报 Skill，并根据提示帮我初始化一个行业简报项目。
 ```
 
 如果已经知道要做哪个行业，也可以直接说：
 
 ```text
-请帮我安装 mondaylab/ai-industry-brief 这个行业简报 Skill，并帮我生成第一期跨境电商简报。
+请帮我安装 skyscraperlee22-del/hud-brief 这个行业简报 Skill，并帮我生成第一期跨境电商简报。
 ```
 
 AI Agent 通常会执行：
 
 ```bash
-npx skills add mondaylab/ai-industry-brief -y -g
+npx skills add skyscraperlee22-del/hud-brief -y -g
 ```
 
 如果你已经克隆了本仓库，也可以从本地路径安装：

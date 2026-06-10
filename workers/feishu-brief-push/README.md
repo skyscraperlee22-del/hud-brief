@@ -7,7 +7,7 @@
 ## 工作流
 
 1. 计算当天日期，默认使用 `Asia/Shanghai`。
-2. 打开 `https://mondaylab.github.io/ai-industry-brief/briefs/YYYY-MM-DD.html`。
+2. 打开 `https://skyscraperlee22-del.github.io/hud-brief/briefs/YYYY-MM-DD.html`。
 3. 使用 Cloudflare Browser Rendering REST API 截取整页 PNG。
 4. 用飞书自建应用凭证获取 `tenant_access_token`。
 5. 上传截图到飞书图片接口，拿到 `image_key`。
@@ -33,7 +33,7 @@ Authorization: Bearer <MANUAL_TRIGGER_TOKEN>
 
 ```json
 {
-  "url": "https://mondaylab.github.io/ai-industry-brief/reports/2026-week-23.html",
+  "url": "https://skyscraperlee22-del.github.io/hud-brief/reports/2026-week-23.html",
   "title": "The AI Industry Brief 周报 · 2026 W23",
   "label": "AI 行业周报",
   "id": "2026-week-23",
@@ -49,7 +49,7 @@ Authorization: Bearer <MANUAL_TRIGGER_TOKEN>
 
 ## 默认配置
 
-- 站点基址：`https://mondaylab.github.io/ai-industry-brief`
+- 站点基址：`https://skyscraperlee22-del.github.io/hud-brief`
 - 时区：`Asia/Shanghai`
 - 截图宽高：`1600 x 2200`
 - 默认 Cron：`40 22 * * *`，并在失败后每 30 分钟巡逻一次
@@ -80,7 +80,7 @@ wrangler secret put MANUAL_TRIGGER_TOKEN
 
 ## 飞书侧准备
 
-1. 创建飞书自建应用，建议名称：`The AI Industry Brief | 星期一研究室`。
+1. 创建飞书自建应用，建议名称：`The AI Industry Brief`。
 2. 启用应用机器人，并把机器人加入目标群。
 3. 把目标群 `chat_id` 写入 `FEISHU_CHAT_ID`。
 4. 把新应用 `App ID` 和 `App Secret` 写入 `FEISHU_APP_ID`、`FEISHU_APP_SECRET`。
@@ -144,7 +144,7 @@ curl -X POST \
   -H "Authorization: Bearer <MANUAL_TRIGGER_TOKEN>" \
   -H "Content-Type: application/json" \
   --data '{
-    "url": "https://mondaylab.github.io/ai-industry-brief/reports/2026-week-23.html",
+    "url": "https://skyscraperlee22-del.github.io/hud-brief/reports/2026-week-23.html",
     "title": "The AI Industry Brief 周报 · 2026 W23",
     "id": "2026-week-23"
   }' \

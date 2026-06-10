@@ -11,19 +11,19 @@
 最推荐的方式不是让用户读完教程，而是直接把下面这句话发给 Codex、Claude Code、Cursor 等 AI 编程助手：
 
 ```text
-请帮我安装 mondaylab/ai-industry-brief 这个行业简报 Skill，并根据提示帮我初始化一个行业简报项目。
+请帮我安装 skyscraperlee22-del/hud-brief 这个行业简报 Skill，并根据提示帮我初始化一个行业简报项目。
 ```
 
 如果你已经知道要做哪个行业，可以把行业也放进第一句话：
 
 ```text
-请帮我安装 mondaylab/ai-industry-brief 这个行业简报 Skill，并帮我生成第一期出海印尼日报。
+请帮我安装 skyscraperlee22-del/hud-brief 这个行业简报 Skill，并帮我生成第一期出海印尼日报。
 ```
 
 AI Agent 应该自动执行：
 
 ```bash
-npx skills add mondaylab/ai-industry-brief -y -g
+npx skills add skyscraperlee22-del/hud-brief -y -g
 ```
 
 如果你已经克隆了这个仓库，也可以从本地路径安装：

@@ -25,7 +25,7 @@ For non-AI industries, keep the same 4 sections x 3 items shape, but replace sec
 ## Archive Layout
 
 - Archive/homepage uses a neutral black/white/gray shell even when the detail pages use weekday Morandi colors.
-- Top visible brand text is Chinese-first: `每日 AI 行业简报`; upper right remains `星期一研究室`.
+- Top visible brand text is Chinese-first: `每日 AI 行业简报`; upper right remains `行业简报`.
 - Top navigation labels are Chinese and ordered: `今日`, `色板`, `往期`.
 - The hero section keeps the English publication masthead `The AI Industry Brief`, a phone-shaped daily-paper preview, and three action buttons:
   - `阅读最新一期` links to the latest detail page.
@@ -90,8 +90,8 @@ For non-AI industries, keep the same 4 sections x 3 items shape, but replace sec
 ## Brand
 
 - Public name: `The AI Industry Brief`
-- Producer attribution in upper right: `星期一研究室`
-- Detail footer left: `星期一研究室出品`
+- Producer attribution in upper right: `行业简报`
+- Detail footer left: `行业简报`
 - Detail footer right: `The AI Industry Brief · 每日行业简报 · 项目管理 · 信息美学`
 - Archive title: `The AI Industry Brief`
 
@@ -115,8 +115,8 @@ Keep the weekly palette balanced around purple, blue, green, and pink families; 
 
 ## Existing Site
 
-- Repository: `mondaylab/ai-industry-brief`
-- Public archive: `https://mondaylab.github.io/ai-industry-brief/`
+- Repository: `skyscraperlee22-del/hud-brief`
+- Public archive: `https://skyscraperlee22-del.github.io/hud-brief/`
 - Publish from `main` through GitHub Pages.
 
 ## Release Gate

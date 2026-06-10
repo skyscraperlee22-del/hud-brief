@@ -126,13 +126,13 @@ function renderBriefPage(data) {
   if (!palette) fail(`Unknown weekday: ${data.weekday}`);
   let html = getTemplateBrief(data.date);
   const dateLabel = `${formatMd(data.date)} · ${data.weekday}`;
-  const title = `The AI Industry Brief | ${dateLabel} | 星期一研究室`;
+  const title = `The AI Industry Brief | ${dateLabel}`;
   const sectionsHtml = buildSectionsHtml(data);
 
   html = replaceOne(html, /<title>[\s\S]*?<\/title>/, `<title>${title}</title>`, "detail title");
   html = replaceOne(html, /--primary:\s*#[0-9A-Fa-f]{6};/, `--primary: ${palette.primary};`, "detail primary");
   html = replaceOne(html, /--primary-light:\s*#[0-9A-Fa-f]{6};/, `--primary-light: ${palette.light};`, "detail primary light");
-  html = replaceOne(html, /<div class="lab">星期一研究室<\/div>/, '<div class="lab">星期一研究室</div>', "detail lab");
+  html = replaceOne(html, /<div class="lab">行业简报<\/div>/, '<div class="lab">行业简报</div>', "detail lab");
   html = replaceOne(html, /<div class="date">[\s\S]*?<\/div>/, `<div class="date">${dateLabel}</div>`, "detail header date");
   html = replaceOne(
     html,
@@ -156,7 +156,7 @@ ${sectionsHtml}
   );
   html = replaceOne(html, /<p class="insight-text">[\s\S]*?<\/p>/, `<p class="insight-text">${escapeHtml(data.insight)}</p>`, "detail insight");
   html = replaceOne(html, /<p class="method-note">[\s\S]*?<\/p>/, `<p class="method-note">${escapeHtml(data.methodNote)}</p>`, "detail method note");
-  html = replaceOne(html, /<div class="footer-lab">[\s\S]*?<\/div>/, '<div class="footer-lab">星期一研究室出品</div>', "detail footer left");
+  html = replaceOne(html, /<div class="footer-lab">[\s\S]*?<\/div>/, '<div class="footer-lab">行业简报</div>', "detail footer left");
   html = replaceOne(
     html,
     /<div class="footer-sub">[\s\S]*?<\/div>/,

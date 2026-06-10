@@ -1,4 +1,4 @@
-const DEFAULT_SITE_BASE_URL = "https://mondaylab.github.io/ai-industry-brief";
+const DEFAULT_SITE_BASE_URL = "https://skyscraperlee22-del.github.io/hud-brief";
 const DEFAULT_TIME_ZONE = "Asia/Shanghai";
 const DEFAULT_SCREENSHOT_WIDTH = 1600;
 const DEFAULT_SCREENSHOT_HEIGHT = 2200;
@@ -966,7 +966,7 @@ function buildFeishuCard({ archiveUrl, detailUrl, date, headline, imageKey }) {
       },
       subtitle: {
         tag: "plain_text",
-        content: "星期一研究室",
+        content: "行业简报",
       },
     },
     elements: [
@@ -1022,7 +1022,7 @@ function buildBriefLinkCard({ archiveUrl, detailUrl, date, headline }) {
       },
       subtitle: {
         tag: "plain_text",
-        content: "星期一研究室",
+        content: "行业简报",
       },
     },
     elements: [
@@ -1070,7 +1070,7 @@ function buildReportCard({ reportUrl, title, label, imageKey }) {
       },
       subtitle: {
         tag: "plain_text",
-        content: "星期一研究室",
+        content: "行业简报",
       },
     },
     elements: [
