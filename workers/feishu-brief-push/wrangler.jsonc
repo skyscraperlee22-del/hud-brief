@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "hud-brief-feishu-push",
+  "main": "src/index.js",
+  "compatibility_date": "2026-05-27",
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "vars": {
+    "SITE_BASE_URL": "https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME",
+    "TIME_ZONE": "Asia/Shanghai",
+    "SCREENSHOT_WIDTH": "1600",
+    "SCREENSHOT_HEIGHT": "2200",
+    "SCREENSHOT_WAIT_MS": "800",
+    "SCREENSHOT_NAVIGATION_TIMEOUT_MS": "20000"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "BRIEF_PUSH_STATE",
+      "id": "REPLACE_WITH_BRIEF_PUSH_STATE_KV_NAMESPACE_ID"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "40 22 * * *",
+      "10,40 23,0,1 * * *"
+    ]
+  }
+}

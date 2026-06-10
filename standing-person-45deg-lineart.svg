@@ -1,0 +1,37 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="1024" fill="#000"/>
+  <defs>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .line{stroke:#fff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;filter:url(#glow)}
+      .soft{stroke:#fff;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;filter:url(#glow)}
+    </style>
+  </defs>
+
+  <!-- Minimal standing person, high three-quarter side view -->
+  <ellipse class="line" cx="512" cy="205" rx="88" ry="64" transform="rotate(-18 512 205)"/>
+  <path class="soft" d="M451 207C483 241 548 252 588 223"/>
+
+  <path class="line" d="M474 266C452 330 425 405 398 492C377 560 396 632 448 674C487 706 547 716 594 690C650 659 676 592 660 525C639 438 609 351 574 268"/>
+  <path class="line" d="M417 396C358 436 322 501 317 570C314 618 339 653 380 666"/>
+  <path class="line" d="M626 390C696 425 740 485 748 556C754 607 729 648 688 664"/>
+
+  <path class="soft" d="M454 682C493 717 565 724 610 690"/>
+  <path class="soft" d="M521 302C548 410 561 542 552 677"/>
+
+  <path class="line" d="M463 706C422 772 385 842 351 923"/>
+  <path class="line" d="M528 720C499 792 473 859 450 936"/>
+  <path class="line" d="M344 924C374 956 421 964 454 938"/>
+
+  <path class="line" d="M589 712C642 767 692 836 742 918"/>
+  <path class="line" d="M532 727C574 792 613 866 650 940"/>
+  <path class="line" d="M649 940C684 962 730 956 750 920"/>
+
+  <path class="soft" d="M302 952C421 989 600 997 780 948"/>
+</svg>
