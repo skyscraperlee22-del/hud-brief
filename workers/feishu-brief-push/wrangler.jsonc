@@ -8,7 +8,7 @@
     "head_sampling_rate": 1
   },
   "vars": {
-    "SITE_BASE_URL": "https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME",
+    "SITE_BASE_URL": "https://skyscraperlee22-del.github.io/hud-brief",
     "TIME_ZONE": "Asia/Shanghai",
     "SCREENSHOT_WIDTH": "1600",
     "SCREENSHOT_HEIGHT": "2200",
