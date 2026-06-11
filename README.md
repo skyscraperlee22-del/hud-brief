@@ -114,6 +114,18 @@ node skills/ai-industry-brief/scripts/check-brief-dedup.js brief-data/YYYY-MM-DD
 7. 检查页面与链接
 8. 提交并推送到 GitHub Pages 仓库
 
+## 每天自动生成
+
+仓库内置 `.github/workflows/daily-brief.yml`，每天北京时间 `06:00` 自动搜索、生成、校验并提交当天简报，`07:00` 自动补跑一次。当天已经成功生成时，补跑不会重复提交。也可以从 GitHub Actions 页面手动运行并指定日期。
+
+启用前，在仓库 `Settings → Secrets and variables → Actions` 中创建 Repository secret：
+
+```text
+OPENAI_API_KEY
+```
+
+工作流默认使用 `gpt-5.4` 和 Responses API 的网页搜索。需要调整模型时，可创建 Repository variable `OPENAI_MODEL`。此外请在 `Settings → Actions → General → Workflow permissions` 确认已允许 `Read and write permissions`，否则工作流无法把生成结果提交回仓库。
+
 ## 扩展到其他行业
 
 这个 Skill 可以理解为是“行业简报的稳定框架”，不单用于 AI 行业，还可以扩展到任何其他行业。扩展时通常只需要改以下四件事：
