@@ -1,0 +1,9 @@
+{
+  "name": "hud-brief-automation",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "generate": "node scripts/generate-daily-brief.mjs",
+    "validate": "node scripts/validate-daily-brief.mjs"
+  }
+}
