@@ -1,0 +1,74 @@
+name: Generate daily brief
+
+on:
+  schedule:
+    # GitHub cron uses UTC. Run at 06:00 and retry at 07:00 in Asia/Shanghai.
+    - cron: "0 22,23 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Brief date (YYYY-MM-DD); empty means today in Asia/Shanghai"
+        required: false
+        type: string
+      force:
+        description: "Replace an existing brief for that date"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-brief
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4' }}
+      FORCE: ${{ inputs.force && '1' || '0' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Resolve brief date
+        id: date
+        env:
+          INPUT_DATE: ${{ inputs.date }}
+        run: |
+          if [ -n "$INPUT_DATE" ]; then
+            DATE="$INPUT_DATE"
+          else
+            DATE="$(TZ=Asia/Shanghai date +%F)"
+          fi
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+
+      - name: Generate researched brief data
+        run: node scripts/generate-daily-brief.mjs "${{ steps.date.outputs.date }}"
+
+      - name: Validate and render
+        run: |
+          node scripts/validate-daily-brief.mjs "brief-data/${{ steps.date.outputs.date }}.json"
+          node skills/ai-industry-brief/scripts/check-brief-dedup.js "brief-data/${{ steps.date.outputs.date }}.json"
+          node skills/ai-industry-brief/scripts/render-brief.js "${{ steps.date.outputs.date }}"
+
+      - name: Commit generated brief
+        run: |
+          if git diff --quiet && [ -z "$(git status --short)" ]; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "brief-data/${{ steps.date.outputs.date }}.json" "briefs/${{ steps.date.outputs.date }}.html" index.html
+          git commit -m "Generate brief for ${{ steps.date.outputs.date }}"
+          git push
